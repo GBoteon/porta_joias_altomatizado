@@ -7,8 +7,8 @@ Servo myservo;
 
 int pos=0;
 
-const char* ssid = "****************";
-const char* password = "****************";
+const char* ssid = "******************";
+const char* password = "******************";
 const char* mqtt_server = "broker.mqtt-dashboard.com";
 
 
@@ -64,7 +64,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
       isObstacle = digitalRead(sensor);
       if (isObstacle == LOW) {
         digitalWrite(green, HIGH);
-        for (pos = 0; pos <= 165; pos += 5) {
+        for (pos = 0; pos <= 160; pos += 10) {
           myservo.write(pos);
         }
         delay(500);
